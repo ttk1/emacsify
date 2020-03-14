@@ -1,36 +1,12 @@
 {
   "env": {
-    "browser": true,
-    "es6": true,
-    "node": true
+      "browser": true
   },
-  "plugins": [
-    "@typescript-eslint",
-    "html"
-  ],
-  "parser": "@typescript-eslint/parser",
+  "extends": "eslint:recommended",
   "parserOptions": {
-    "sourceType": "module"
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+      "ecmaVersion": 2015
   },
   "rules": {
-    "@typescript-eslint/quotes": ["warn", "single"],
-    "@typescript-eslint/semi": "error",
-    "eol-last": "warn",
-    "@typescript-eslint/explicit-function-return-type": "off"
-  },
-  "overrides": [{
-    "files": ["*.js"],
-    "rules": {
-      "@typescript-eslint/no-var-requires": "off"
-    }
-  }]
+    "no-var":"error"
+  }
 }
