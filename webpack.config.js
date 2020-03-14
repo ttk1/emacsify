@@ -6,10 +6,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'docs'),
-    filename: 'main.js'
+    filename: 'emacsify.js'
   },
   devServer: {
-    contentBase: 'docs',
+    contentBase: 'dev_server',
     port: 3000
   },
   resolve: {

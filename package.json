@@ -4,7 +4,7 @@
   "description": "formの文字入力でemacs風キーバインドを使うための何か",
   "scripts": {
     "start": "webpack-dev-server --no-inline",
-    "dist": "webpack --mode=production",
+    "dist": "webpack --mode=production && cat header docs/emacsify.js > docs/emacsify.js.tmp && mv docs/emacsify.js.tmp docs/emacsify.js",
     "lint": "eslint . --ext .ts --ext .html"
   },
   "author": "tama@ttk1.net",
