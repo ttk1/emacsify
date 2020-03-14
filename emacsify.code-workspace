@@ -1,0 +1,17 @@
+{
+	"folders": [{
+		"path": "."
+	}],
+	"settings": {
+    "terminal.integrated.env.windows": {
+      "PATH": "${workspaceRoot}\\node_modules\\.bin;${env:PATH}"
+    },
+		"terminal.integrated.env.osx": {
+      "PATH": "${workspaceRoot}/node_modules/.bin:${env:PATH}"
+    },
+		"typescript.tsdk": "node_modules\\typescript\\lib",
+		"editor.tabSize": 2,
+		"git.ignoreLimitWarning": true,
+		"files.insertFinalNewline": true,
+	}
+}
