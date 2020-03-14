@@ -7,10 +7,10 @@
 // @match        https://ttk1.github.io/emacsify/
 // @grant        none
 // ==/UserScript==
-
 function main() {
-  const textarea = document.getElementById('textarea');
-  textarea.innerHTML = 'hello, world'
+    var textarea = document.getElementById('textarea');
+    textarea.innerHTML = 'hello, world\npiyo\nhuga';
+    textarea.focus();
+    textarea.setSelectionRange(13, 14);
 }
-
 main();

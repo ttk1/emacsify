@@ -1,15 +1,19 @@
 {
   "name": "emacsify",
   "version": "1.0.0",
-  "description": "formの文字入力でemacs風キーバインドを使うための何か",
+  "description": "ブラウザの文字入力でemacs風キーバインドを使うための何か",
   "scripts": {
-    "start": "webpack-dev-server --no-inline",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint . --ext .ts"
   },
   "author": "tama@ttk1.net",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-html": "^6.0.0",
+    "js-beautify": "^1.10.3",
+    "typescript": "^3.8.3"
   },
   "repository": {
     "type": "git",
