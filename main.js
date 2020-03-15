@@ -2,7 +2,7 @@
 // @name         emacsify
 // @namespace    https://ttk1.net/
 // @version      0.0
-// @description  Add emacs key binds.
+// @description  Add emacs like key binds.
 // @author       tama@ttk1.net
 // @match        https://ttk1.github.io/emacsify/*
 // @grant        none
