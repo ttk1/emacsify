@@ -5,15 +5,24 @@ body {
   height: 100%;
 }
 
-.container {
+#header {
+  margin: 0;
+  padding: 5px;
+  height: 50px;
+}
+
+#container {
   box-sizing: border-box;
-  height: 100%;
+  height: calc(100% - 60px);
+  margin: 0;
   padding: 10px;
 }
 
-textarea {
+#textarea {
   box-sizing: border-box;
   resize: none;
+  margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
 }
