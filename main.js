@@ -8,10 +8,7 @@
 // @grant        none
 // ==/UserScript==
 
-const keybinds = {
-  'B': backward,
-  'F': forward
-}
+'use strict';
 
 const backward = function (target) {
   if (target instanceof HTMLTextAreaElement || target instanceof HTMLInputElement) {
@@ -26,6 +23,11 @@ const forward = function (target) {
     target.setSelectionRange(current + 1, current + 1);
   }
 };
+
+const keybinds = {
+  'B': backward,
+  'F': forward
+}
 
 const onKeyDown = function (event) {
   const target = document.activeElement;
