@@ -8,42 +8,39 @@
 // @grant        none
 // ==/UserScript==
 
+const keybinds = {
+  'B': backward,
+  'F': forward
+}
+
 const backward = function (target) {
-  if (target instanceof HTMLTextAreaElement) {
+  if (target instanceof HTMLTextAreaElement || target instanceof HTMLInputElement) {
     const current = target.selectionStart;
-    target.focus();
     target.setSelectionRange(current - 1, current - 1);
   }
 };
 
 const forward = function (target) {
-  if (target instanceof HTMLTextAreaElement) {
+  if (target instanceof HTMLTextAreaElement || target instanceof HTMLInputElement) {
     const current = target.selectionStart;
-    target.focus();
     target.setSelectionRange(current + 1, current + 1);
   }
 };
 
 const onKeyDown = function (event) {
-  if (event instanceof KeyboardEvent &&
-    event.ctrlKey &&
-    event.target instanceof HTMLTextAreaElement) {
-    let key = String.fromCharCode(event.keyCode);
-    switch (key) {
-      case 'B':
-        backward(event.target);
+  const target = document.activeElement;
+  if (target instanceof HTMLTextAreaElement || target instanceof HTMLInputElement) {
+    if (event instanceof KeyboardEvent && event.ctrlKey) {
+      const key = String.fromCharCode(event.keyCode);
+      const keybind = keybinds[key];
+      if (keybind) {
+        keybind(target);
         event.preventDefault();
-        break;
-      case 'F':
-        forward(event.target);
-        event.preventDefault();
-        break;
+      }
     }
   }
 };
 
 (() => {
-  const textarea = document.getElementById('textarea');
-  textarea.innerHTML = 'hello, world\npiyo\nhuga';
-  textarea.addEventListener('keydown', onKeyDown, false);
+  document.addEventListener('keydown', onKeyDown, false);
 })();
