@@ -13,14 +13,24 @@
 const backward = function (target) {
   if (target instanceof HTMLTextAreaElement || target instanceof HTMLInputElement) {
     const current = target.selectionStart;
-    target.setSelectionRange(current - 1, current - 1);
+    if (current > 0) {
+      target.setSelectionRange(current - 1, current - 1);
+    }
   }
 };
 
 const forward = function (target) {
   if (target instanceof HTMLTextAreaElement || target instanceof HTMLInputElement) {
     const current = target.selectionStart;
-    target.setSelectionRange(current + 1, current + 1);
+    if (target instanceof HTMLTextAreaElement) {
+      if (current < target.textLength) {
+        target.setSelectionRange(current + 1, current + 1);
+      }
+    } else {
+      if (current < target.value.length) {
+        target.setSelectionRange(current + 1, current + 1);
+      }
+    }
   }
 };
 
